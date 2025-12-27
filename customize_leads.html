@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Leads - Data Lead Generation</title>
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/svgs/solid/database.svg" type="image/svg+xml">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Enhanced header and icon styles */
+        .icon-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4287f5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 8px 16px rgba(0, 86, 179, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .icon-circle::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            top: -25%;
+            left: -25%;
+            opacity: 0.3;
+        }
+        
+        .pulse-icon {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .glow-effect {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            border: none;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .alert-icon-wrapper {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem;
+            border-radius: 8px 0 0 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .alert-content { flex: 1; }
+        
+        .premium-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #4287f5 0%, #0056b3 100%);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .premium-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 86, 179, 0.4);
+        }
+        
+        .badge-icon {
+            margin-right: 0.4rem;
+            animation: rotate 3s linear infinite;
+            display: inline-block;
+            font-size: 0.8rem;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .badge-sparkle {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: sparkle 2s infinite;
+        }
+        
+        @keyframes sparkle {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .customize-leads-section {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+            background-image: linear-gradient(135deg, #e3f2fd 0%, rgba(0,86,179,0.05) 100%);
+        }
+        
+        .form-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .form-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .form-header { margin-bottom: 2.5rem; text-align: center; }
+        .form-header h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-color); }
+        .form-header p { color: #6c757d; font-size: 1.1rem; }
+        
+        .form-group { margin-bottom: 1.5rem; position: relative; }
+        
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            color: #333;
+        }
+        
+        .form-control, .form-select {
+            padding: 0.45rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+            height: 36px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .form-icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4287f5 100%);
+            margin-right: 0.4rem;
+            color: white;
+            font-size: 0.65rem;
+        }
+        
+        .optional-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            padding: 0.1rem 0.35rem;
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            color: white;
+            border-radius: 50px;
+            margin-left: 0.4rem;
+        }
+        
+        .enhanced-text {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.2rem 0.5rem;
+            background-color: rgba(0, 86, 179, 0.05);
+            border-left: 2px solid var(--primary-color);
+            border-radius: 0 3px 3px 0;
+            font-size: 0.8rem;
+            margin-top: 0.4rem;
+            color: #6c757d;
+        }
+        
+        .tag-item {
+            display: inline-flex;
+            padding: 0.2rem 0.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px solid #dee2e6;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            margin: 0.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tag-item:hover {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4287f5 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4287f5 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
+            margin-top: 2rem;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 86, 179, 0.4);
+        }
+        
+        /* File Upload */
+        .file-drop-area {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 2rem;
+            border: 2px dashed #ced4da;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .file-drop-area:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(0, 86, 179, 0.03);
+        }
+        
+        .btn-upload-file {
+            padding: 0.35rem 1rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4287f5 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Counter buttons */
+        .leads-input-group .btn-counter {
+            background: #e9ecef;
+            border: 1px solid #ced4da;
+            color: var(--primary-color);
+            width: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .leads-input-group .btn-counter:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Breadcrumb specific override */
+        .breadcrumb-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, rgba(0,86,179,0.1) 100%);
+            padding: 3rem 0 2rem;
+        }
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-database me-2 text-primary"></i> Data <span>Lead Gen</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sample_leads.html">Sample Leads</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="customize_leads.html">Free Customize Leads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="ms-lg-3 d-flex align-items-center">
+                    <a href="customize_leads.html" class="btn btn-primary">Get Free Customize Leads</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="breadcrumb-section">
+            <div class="container">
+                <br><br> 
+                <div class="breadcrumb-content">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb" style="background: rgba(255,255,255,0.5); display: inline-flex; padding: 0.5rem 1rem; border-radius: 50px;">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Customize Leads</li>
+                        </ol>
+                    </nav>
+                    <h1 class="page-title">
+                        <span class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle me-2" style="width: 36px; height: 36px; font-size: 1rem;"><i class="fas fa-cogs"></i></span>
+                        <span>Customize Your Leads</span>
+                    </h1>
+                    <p class="text-muted lead">Define your target audience and get high-quality leads tailored to your needs</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="customize-leads-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="form-card">
+                            <div class="form-header">
+                                <div class="icon-wrapper mb-3">
+                                    <div class="icon-circle">
+                                        <i class="fas fa-bullseye pulse-icon" style="font-size: 1.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h1>Target Leads Criteria</h1>
+                                <div class="alert alert-success mb-3 glow-effect">
+                                    <div class="alert-icon-wrapper">
+                                        <i class="fas fa-gift fa-bounce"></i>
+                                    </div>
+                                    <div class="alert-content">
+                                        <strong>FREE SAMPLE!</strong> Get your first customized leads at no cost!
+                                    </div>
+                                </div>
+                                <p>Customize your lead generation requirements by providing targeting information below.</p>
+                                <div class="premium-badge mb-3">
+                                    <span class="badge-icon"><i class="fas fa-crown"></i></span>
+                                    <span class="badge-text">Free Customize Leads</span>
+                                    <span class="badge-sparkle"></span>
+                                </div>
+                            </div>
+                            
+                            <form method="POST" action="https://formspree.io/f/YOUR_FORM_ID" id="customizeLeadsForm" enctype="multipart/form-data">
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">
+                                                <div class="form-icon-wrapper"><i class="fas fa-user-circle"></i></div>
+                                                Full Name <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" name="name" class="form-control" placeholder="Your full name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">
+                                                <div class="form-icon-wrapper"><i class="fas fa-envelope-open-text"></i></div>
+                                                Email Address <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="email" name="email" class="form-control" placeholder="Your email address" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <hr class="my-4">
+                                <h4 class="mb-3 text-primary"><i class="fas fa-filter me-2"></i>Lead Criteria</h4>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <div class="form-icon-wrapper"><i class="fas fa-globe-americas"></i></div>
+                                        Country / Location <span class="optional-badge">optional</span>
+                                    </label>
+                                    <input type="text" name="countries" class="form-control" placeholder="e.g., USA, UK, Canada, Australia">
+                                    <small class="enhanced-text"><i class="fas fa-info-circle"></i> Enter countries or regions separated by commas</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <div class="form-icon-wrapper"><i class="fas fa-building"></i></div>
+                                        Industry / Company Type <span class="optional-badge">optional</span>
+                                    </label>
+                                    <input type="text" name="industry" class="form-control" placeholder="e.g., Technology, SaaS, Marketing, Healthcare">
+                                    <small class="enhanced-text"><i class="fas fa-info-circle"></i> Enter industries or company types</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <div class="form-icon-wrapper"><i class="fas fa-chart-bar"></i></div>
+                                        Employee Count Range <span class="optional-badge">optional</span>
+                                    </label>
+                                    <select name="employee_count_range" class="form-select custom-select" id="employeeCountRange">
+                                        <option value="">Select a range</option>
+                                        <option value="1-10">1-10 employees</option>
+                                        <option value="11-50">11-50 employees</option>
+                                        <option value="51-200">51-200 employees</option>
+                                        <option value="201-500">201-500 employees</option>
+                                        <option value="501-1000">501-1000 employees</option>
+                                        <option value="1001-5000">1001-5000 employees</option>
+                                        <option value="5001-10000">5001-10000 employees</option>
+                                        <option value="10001+">10001+ employees</option>
+                                        <option value="custom">Custom range</option>
+                                    </select>
+                                    
+                                    <div id="customRangeInput" class="mt-2" style="display: none;">
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-primary text-white"><i class="fas fa-ruler-combined"></i></span>
+                                            <input type="text" name="custom_employee_count" id="customEmployeeCount" class="form-control" placeholder="Enter custom range (e.g., 100-300)">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <div class="form-icon-wrapper"><i class="fas fa-user-tag"></i></div>
+                                        Target Titles <span class="optional-badge">optional</span>
+                                    </label>
+                                    <input type="text" name="target_titles" id="targetTitles" class="form-control" placeholder="e.g., CEO, Founder, VP of Sales">
+                                    <div class="mt-2">
+                                        <span class="tag-item" onclick="appendTag('CEO')">CEO</span>
+                                        <span class="tag-item" onclick="appendTag('CTO')">CTO</span>
+                                        <span class="tag-item" onclick="appendTag('Founder')">Founder</span>
+                                        <span class="tag-item" onclick="appendTag('VP of Marketing')">VP of Marketing</span>
+                                        <span class="tag-item" onclick="appendTag('Director')">Director</span>
+                                    </div>
+                                    <small class="enhanced-text"><i class="fas fa-info-circle"></i> Enter job titles separated by commas</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <div class="form-icon-wrapper"><i class="fas fa-layer-group"></i></div>
+                                        Leads per Company <span class="optional-badge">optional</span>
+                                    </label>
+                                    <div class="input-group leads-input-group">
+                                        <span class="input-group-text"><i class="fas fa-database"></i></span>
+                                        <input type="number" name="leads_per_company" id="leadsPerCompany" class="form-control" placeholder="Number of leads per company" min="1" value="1">
+                                        <button type="button" class="btn btn-counter" id="decreaseLeads"><i class="fas fa-minus"></i></button>
+                                        <button type="button" class="btn btn-counter" id="increaseLeads"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                    <small class="enhanced-text"><i class="fas fa-info-circle"></i> Specify how many contacts you need from each company</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <div class="form-icon-wrapper"><i class="fas fa-comment-alt"></i></div>
+                                        Additional Requirements <span class="optional-badge">optional</span>
+                                    </label>
+                                    <textarea name="notes" class="form-control" rows="4" placeholder="Describe any specific requirements, custom filters, or exclusions..."></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <div class="form-icon-wrapper"><i class="fas fa-file-import"></i></div>
+                                        Attach Sample File <span class="optional-badge">optional</span>
+                                    </label>
+                                    <div class="file-drop-area" onclick="document.getElementById('customFileUpload').click()">
+                                        <div class="text-center">
+                                            <i class="fas fa-cloud-upload-alt text-primary mb-3" style="font-size: 2rem;"></i>
+                                            <p class="mb-1">Drag & drop files here or</p>
+                                            <button type="button" class="btn-upload-file">Browse Files</button>
+                                            <p id="fileNameDisplay" class="mt-2 text-success small fw-bold"></p>
+                                        </div>
+                                        <input type="file" name="sample_file" id="customFileUpload" style="display: none;">
+                                    </div>
+                                    <small class="enhanced-text"><i class="fas fa-info-circle"></i> Only Excel, CSV, PDF, and image files are allowed</small>
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-rocket me-2"></i> Get My Customized Leads
+                                </button>
+                                <div class="text-center mt-3">
+                                    <small class="text-muted"><i class="fas fa-shield-alt me-1"></i> Your data is secure</small>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand mb-4">
+                        <h3><i class="fas fa-database me-2"></i> Data Lead Gen</h3>
+                    </div>
+                    <p>Founded in 2019 by Zakir Hussain, Data Lead Generation is a leading provider of B2B data solutions.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> zakir@dataleadgen.com</p>
+                        <p><i class="fas fa-phone"></i> +91 7869874458</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Sardar Patel colony, Burhanpur, MP, IN</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="sample_leads.html">Sample Leads</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Our Services</h5>
+                        <ul>
+                            <li><a href="services.html">Data Mining</a></li>
+                            <li><a href="services.html">Email List Building</a></li>
+                            <li><a href="services.html">Data Cleansing</a></li>
+                            <li><a href="services.html">Data Scraping</a></li>
+                            <li><a href="services.html">Email Verification</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h5>Subscribe Newsletter</h5>
+                        <p>Subscribe to our newsletter.</p>
+                        <form class="mt-3" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom mt-5">
+            <div class="container text-center">
+                <p class="mb-0">© 2019-2025 Data Lead Generation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/main.js"></script>
+    
+    <script>
+        // Tag Selection Logic
+        function appendTag(tag) {
+            const input = document.getElementById('targetTitles');
+            let currentValue = input.value.trim();
+            if (currentValue === '') {
+                input.value = tag;
+            } else if (!currentValue.includes(tag)) {
+                input.value = currentValue + ', ' + tag;
+            }
+        }
+
+        // Custom Range Toggle
+        document.getElementById('employeeCountRange').addEventListener('change', function() {
+            const customInputDiv = document.getElementById('customRangeInput');
+            if (this.value === 'custom') {
+                customInputDiv.style.display = 'block';
+            } else {
+                customInputDiv.style.display = 'none';
+            }
+        });
+
+        // Leads Counter Logic
+        const leadsInput = document.getElementById('leadsPerCompany');
+        document.getElementById('increaseLeads').addEventListener('click', function() {
+            leadsInput.value = parseInt(leadsInput.value || 0) + 1;
+        });
+        document.getElementById('decreaseLeads').addEventListener('click', function() {
+            let val = parseInt(leadsInput.value || 0);
+            if(val > 1) leadsInput.value = val - 1;
+        });
+
+        // File Upload Name Display
+        document.getElementById('customFileUpload').addEventListener('change', function() {
+            const fileName = this.files[0] ? this.files[0].name : '';
+            const display = document.getElementById('fileNameDisplay');
+            if (fileName) {
+                display.innerHTML = '<i class="fas fa-check-circle me-1"></i> ' + fileName;
+            } else {
+                display.innerHTML = '';
+            }
+        });
+        
+        // Page Animations on Load
+        document.addEventListener('DOMContentLoaded', function() {
+            const formCard = document.querySelector('.form-card');
+            formCard.style.opacity = '0';
+            formCard.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                formCard.style.transition = 'all 0.6s ease-out';
+                formCard.style.opacity = '1';
+                formCard.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

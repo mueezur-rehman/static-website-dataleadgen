@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Leads - Data Lead Generation</title>
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/svgs/solid/database.svg" type="image/svg+xml">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-database me-2 text-primary"></i>
+                Data <span>Lead Gen</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="sample_leads.html">Sample Leads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="customize_leads.html">Free Customize Leads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="ms-lg-3 d-flex align-items-center">
+                    <a href="customize_leads.html" class="btn btn-primary">Get Free Customize Leads</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="breadcrumb-section">
+            <div class="container">
+                <br><br><br>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Sample Leads</li>
+                    </ol>
+                </nav>
+                <h1 class="mb-0">Sample Leads</h1>
+            </div>
+        </div>
+
+        <section class="sample-leads-header py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Data Visualization" class="img-fluid rounded shadow">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="section-title">Data Quality You Can Trust</h2>
+                        <p class="lead">Experience the difference high-quality, verified lead data can make for your business.</p>
+                        <p>At Data Lead Generation, we pride ourselves on providing the most accurate and up-to-date B2B lead data available. Our rigorous verification process ensures that you receive only quality leads that match your specific targeting criteria.</p>
+                        <p>Below, you'll find visualizations of our sample lead data to demonstrate the quality and depth of information we provide.</p>
+                        <div class="mt-4">
+                            <a href="customize_leads.html" class="btn btn-primary">Request Custom Data</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sample-leads bg-light py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="section-title text-center">Lead Data Insights</h2>
+                        <p class="mb-5">Explore visualizations of our lead data quality and distribution.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="lead-card">
+                            <h3 class="mb-4">Industry Distribution</h3>
+                            <div class="chart-container">
+                                <canvas id="industryChart" data-chart='{"labels": ["Technology", "Healthcare", "Finance", "Retail", "Manufacturing", "Education", "Other"], "data": [30, 20, 15, 10, 15, 5, 5]}'></canvas>
+                            </div>
+                            <p>Our lead database covers a wide range of industries, allowing you to target the specific sectors that matter most to your business.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="lead-card">
+                            <h3 class="mb-4">Lead Quality Metrics</h3>
+                            <div class="chart-container">
+                                <canvas id="qualityChart" data-chart='{"labels": ["Verified Email", "Direct Phone", "LinkedIn Profile", "Company Info"], "data": [98, 85, 95, 100]}'></canvas>
+                            </div>
+                            <p>We maintain high data quality standards, ensuring that the leads we provide have verified contact information and complete profiles.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="lead-card">
+                            <h3 class="mb-4">Monthly Lead Generation</h3>
+                            <div class="chart-container">
+                                <canvas id="monthlyChart" data-chart='{"labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"], "data": [1200, 1500, 1800, 2200, 2600, 3000]}'></canvas>
+                            </div>
+                            <p>Our lead database is continuously growing, with thousands of new verified leads added each month.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="lead-card">
+                            <h3 class="mb-4">Company Size Distribution</h3>
+                            <div class="chart-container">
+                                <canvas id="companySizeChart" data-chart='{"labels": ["1-50", "51-200", "201-1000", "1000+"], "data": [40, 25, 20, 15]}'></canvas>
+                            </div>
+                            <p>Our database includes companies of all sizes, from small businesses to large enterprises, allowing for precise targeting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lead-categories py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="section-title text-center">Specialized Lead Categories</h2>
+                        <p class="mb-5">Explore our comprehensive range of industry-specific lead categories designed to meet your exact business needs.</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4 category-card-container">
+                        <div class="card border-0 shadow-sm h-100 category-card">
+                            <div class="card-body p-4">
+                                <div class="category-icon mb-3"><i class="fas fa-users fa-2x"></i></div>
+                                <h3 class="category-title">Influencers</h3>
+                                <p class="category-description">Connect with influential content creators, bloggers, and social media personalities to amplify your brand message.</p>
+                                <div class="subcategories mb-3">
+                                    <a href="https://docs.google.com/spreadsheets/d/1z4p2gvwLsWaNb7EfwsWZSf2lhSePKs3vYejYuNOYICw/edit?gid=0" target="_blank" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Fitness Influencers USA</span></a>
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Gaming Influencer USA</span></a>
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Bloggers</span></a>
+                                </div>
+                                <div class="typical-fields">
+                                    <h5 class="typical-fields-title">Typical Fields</h5>
+                                    <ul class="typical-fields-list">
+                                        <li>Name</li>
+                                        <li>Social Platforms</li>
+                                        <li>Follower Count</li>
+                                        <li>Engagement Rate</li>
+                                    </ul>
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between">
+                                    <a href="https://docs.google.com/spreadsheets/u/3/d/e/2PACX-1vSBMso2AjnzhcauVWbp0zVNoRNWBwkV7ZnUrwZG9BFwBqj77q_fIgfV3q3_dyDJahuGhbmbYI2vmvAW/pubhtml?gid=911236402&single=true" target="_blank" class="btn btn-outline-secondary view-sheet-btn"><i class="fas fa-table me-1"></i> View Main Sheet</a>
+                                    <a href="customize_leads.html" class="btn btn-outline-primary category-btn">Request Leads</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4 category-card-container">
+                        <div class="card border-0 shadow-sm h-100 category-card">
+                            <div class="card-body p-4">
+                                <div class="category-icon mb-3"><i class="fas fa-hand-holding-heart fa-2x"></i></div>
+                                <h3 class="category-title">Non-Profit & Aged Care</h3>
+                                <p class="category-description">High-quality lead data for non-profit organizations and aged care facilities.</p>
+                                <div class="subcategories mb-3">
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Non Profit Organization</span></a>
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Aged Care</span></a>
+                                </div>
+                                <div class="typical-fields">
+                                    <h5 class="typical-fields-title">Typical Fields</h5>
+                                    <ul class="typical-fields-list">
+                                        <li>Organization Name</li>
+                                        <li>Mission Focus</li>
+                                        <li>Key Decision Makers</li>
+                                    </ul>
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between">
+                                    <a href="#" target="_blank" class="btn btn-outline-secondary view-sheet-btn"><i class="fas fa-table me-1"></i> View Main Sheet</a>
+                                    <a href="customize_leads.html" class="btn btn-outline-primary category-btn">Request Leads</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4 category-card-container">
+                        <div class="card border-0 shadow-sm h-100 category-card">
+                            <div class="card-body p-4">
+                                <div class="category-icon mb-3"><i class="fas fa-home fa-2x"></i></div>
+                                <h3 class="category-title">Real Estate</h3>
+                                <p class="category-description">Premium leads for real estate professionals, brokers, and investors.</p>
+                                <div class="subcategories mb-3">
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Real Estate Agent USA</span></a>
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Brokers</span></a>
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Investors</span></a>
+                                </div>
+                                <div class="typical-fields">
+                                    <h5 class="typical-fields-title">Typical Fields</h5>
+                                    <ul class="typical-fields-list">
+                                        <li>Name</li>
+                                        <li>Agency</li>
+                                        <li>Property Types</li>
+                                        <li>Location</li>
+                                    </ul>
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between">
+                                    <a href="#" target="_blank" class="btn btn-outline-secondary view-sheet-btn"><i class="fas fa-table me-1"></i> View Main Sheet</a>
+                                    <a href="customize_leads.html" class="btn btn-outline-primary category-btn">Request Leads</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4 category-card-container">
+                        <div class="card border-0 shadow-sm h-100 category-card">
+                            <div class="card-body p-4">
+                                <div class="category-icon mb-3"><i class="fas fa-dumbbell fa-2x"></i></div>
+                                <h3 class="category-title">Fitness Industry</h3>
+                                <p class="category-description">Qualified leads for fitness professionals and gym businesses.</p>
+                                <div class="subcategories mb-3">
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Online Trainers</span></a>
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Gym Businesses</span></a>
+                                </div>
+                                <div class="typical-fields">
+                                    <h5 class="typical-fields-title">Typical Fields</h5>
+                                    <ul class="typical-fields-list">
+                                        <li>Business Name</li>
+                                        <li>Specialization</li>
+                                        <li>Services Offered</li>
+                                    </ul>
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between">
+                                    <a href="#" target="_blank" class="btn btn-outline-secondary view-sheet-btn"><i class="fas fa-table me-1"></i> View Main Sheet</a>
+                                    <a href="customize_leads.html" class="btn btn-outline-primary category-btn">Request Leads</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4 category-card-container">
+                        <div class="card border-0 shadow-sm h-100 category-card">
+                            <div class="card-body p-4">
+                                <div class="category-icon mb-3"><i class="fas fa-hard-hat fa-2x"></i></div>
+                                <h3 class="category-title">Construction</h3>
+                                <p class="category-description">Targeted leads for construction companies and contractors.</p>
+                                <div class="subcategories mb-3">
+                                    <a href="https://docs.google.com/spreadsheets/d/1KFj2UD5tfQlGQG-glo7OrzvS5-fhdm5AOjmdYTrJ7L4/edit?gid=0#gid=0" target="_blank" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Construction Companies</span></a>
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Contractors</span></a>
+                                </div>
+                                <div class="typical-fields">
+                                    <h5 class="typical-fields-title">Typical Fields</h5>
+                                    <ul class="typical-fields-list">
+                                        <li>Company Name</li>
+                                        <li>Project Scale</li>
+                                        <li>Service Area</li>
+                                    </ul>
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between">
+                                    <a href="#" target="_blank" class="btn btn-outline-secondary view-sheet-btn"><i class="fas fa-table me-1"></i> View Main Sheet</a>
+                                    <a href="customize_leads.html" class="btn btn-outline-primary category-btn">Request Leads</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4 category-card-container">
+                        <div class="card border-0 shadow-sm h-100 category-card">
+                            <div class="card-body p-4">
+                                <div class="category-icon mb-3"><i class="fas fa-briefcase fa-2x"></i></div>
+                                <h3 class="category-title">B2B Services</h3>
+                                <p class="category-description">Quality B2B leads for businesses looking to expand their corporate client network.</p>
+                                <div class="subcategories mb-3">
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Technology Companies</span></a>
+                                    <a href="#" class="subcategory-badge-link"><span class="badge subcategory-badge mb-1 me-1">Marketing Agencies</span></a>
+                                </div>
+                                <div class="typical-fields">
+                                    <h5 class="typical-fields-title">Typical Fields</h5>
+                                    <ul class="typical-fields-list">
+                                        <li>Company Name</li>
+                                        <li>Industry</li>
+                                        <li>Decision Makers</li>
+                                    </ul>
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between">
+                                    <a href="#" target="_blank" class="btn btn-outline-secondary view-sheet-btn"><i class="fas fa-table me-1"></i> View Main Sheet</a>
+                                    <a href="customize_leads.html" class="btn btn-outline-primary category-btn">Request Leads</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="sample-data-table py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="section-title text-center">Sample Lead Preview</h2>
+                        <p class="mb-5">Below is a preview of the type of data we can provide, with details anonymized for privacy.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card border-0 shadow-sm table-card">
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead class="bg-primary text-white">
+                                            <tr>
+                                                <th>Job Title</th>
+                                                <th>Industry</th>
+                                                <th>Company Size</th>
+                                                <th>Location</th>
+                                                <th>Contact Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="table-row"><td>Chief Technology Officer</td><td>Technology</td><td>201-500</td><td>San Francisco, CA</td><td><span class="badge bg-success">Verified</span></td></tr>
+                                            <tr class="table-row"><td>Marketing Director</td><td>Healthcare</td><td>501-1000</td><td>Boston, MA</td><td><span class="badge bg-success">Verified</span></td></tr>
+                                            <tr class="table-row"><td>VP of Operations</td><td>Manufacturing</td><td>1000+</td><td>Chicago, IL</td><td><span class="badge bg-success">Verified</span></td></tr>
+                                            <tr class="table-row"><td>Procurement Manager</td><td>Retail</td><td>51-200</td><td>Atlanta, GA</td><td><span class="badge bg-success">Verified</span></td></tr>
+                                            <tr class="table-row"><td>Chief Financial Officer</td><td>Finance</td><td>201-500</td><td>New York, NY</td><td><span class="badge bg-success">Verified</span></td></tr>
+                                            <tr class="table-row"><td>Human Resources Director</td><td>Education</td><td>501-1000</td><td>Austin, TX</td><td><span class="badge bg-success">Verified</span></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <p><em>Note: This is sample data. Actual leads will include full company names, contact names, email addresses, phone numbers, and more.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-fields bg-light py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="section-title text-center">Available Data Fields</h2>
+                        <p class="mb-5">We provide comprehensive information for each lead in our database.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4"><i class="fas fa-user text-primary me-2"></i> Contact Information</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> First Name & Last Name</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Job Title</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Direct Email Address</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Direct Phone Number</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> LinkedIn Profile URL</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4"><i class="fas fa-building text-primary me-2"></i> Company Information</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Company Name</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Industry</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Company Size</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Revenue Range</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Company Website</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4"><i class="fas fa-map-marker-alt text-primary me-2"></i> Location & Additional Data</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Full Address</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> City, State, Country</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Postal Code</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Technology Stack</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="section-title text-center">What Our Clients Say</h2>
+                        <p class="mb-5">Don't just take our word for it - hear from businesses that have used our lead data.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">"The quality of leads we received from Data Lead Generation was exceptional. Over 95% of the emails were deliverable."</div>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1561489413-985b06da5bee" alt="John Smith" class="img-fluid">
+                                <div><h5 class="mb-0">John Smith</h5><p class="text-muted mb-0">Marketing Director</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">"We needed highly targeted leads in the healthcare sector, and Data Lead Generation delivered exactly what we needed."</div>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956" alt="Sarah Johnson" class="img-fluid">
+                                <div><h5 class="mb-0">Sarah Johnson</h5><p class="text-muted mb-0">Sales Manager</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">"The team at Data Lead Generation went above and beyond to provide us with the specific data we needed."</div>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Michael Chen" class="img-fluid">
+                                <div><h5 class="mb-0">Michael Chen</h5><p class="text-muted mb-0">Business Development</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bg-primary text-white p-5 rounded shadow">
+                            <div class="row align-items-center">
+                                <div class="col-lg-8 mb-4 mb-lg-0">
+                                    <h2 class="mb-3">Ready to get high-quality leads for your business?</h2>
+                                    <p class="lead mb-0">Request a free consultation to discuss your specific lead generation needs.</p>
+                                </div>
+                                <div class="col-lg-4 text-lg-end">
+                                    <a href="customize_leads.html" class="btn btn-light btn-lg">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand mb-4">
+                        <h3><i class="fas fa-database me-2"></i> Data Lead Gen</h3>
+                    </div>
+                    <p>Founded in 2019 by Zakir Hussain, Data Lead Generation is a leading provider of B2B data solutions.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> zakir@dataleadgen.com</p>
+                        <p><i class="fas fa-phone"></i> +91 7869874458</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Sardar Patel colony, Burhanpur, MP, IN</p>
+                    </div>
+                    <ul class="footer-social">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="sample_leads.html">Sample Leads</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Our Services</h5>
+                        <ul>
+                            <li><a href="services.html">Data Mining</a></li>
+                            <li><a href="services.html">Email List Building</a></li>
+                            <li><a href="services.html">Data Cleansing</a></li>
+                            <li><a href="services.html">Data Scraping</a></li>
+                            <li><a href="services.html">Email Verification</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h5>Subscribe Newsletter</h5>
+                        <p>Subscribe to our newsletter.</p>
+                        <form class="mt-3" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom mt-5">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-md-6 text-start"><p class="mb-md-0">© 2019-2025 Data Lead Generation. All Rights Reserved.</p></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="static/js/charts.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+</html>
